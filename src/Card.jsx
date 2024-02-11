@@ -1,0 +1,24 @@
+import React from 'react'
+import Grid from './Grid';
+
+function Card() {
+    const images=[
+        'https://s3-alpha-sig.figma.com/img/71b7/26c9/bdb04893d9269540ca86da074296255e?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=W5sLhuSq3FkrVCBCRTh84mbppkR~-f0tNtkb8RWMWK15oz9Gcanz4YFoO6KHOA7MiGslU3jSzopCULGXcsvjkldwmO3qeNDgSBK6EFGI4QiNvNu2j~rBRqmCaak1gqKFZFrEtGDaDNS62sd0L6pZaAZTu0zJ6G07biTXYcFqHEk39dWFWQhWjPgFNHFTRgYQMC7JQczi2uWt5K3Xfm9EM0AALDD43ZtfoIvdZOTI7vFD1hR655fOHPD1FSr~V4LSTe5iER1uPNux6UmQLeUM41iuxucHdRgsJ24KgG0XbBQuoCcO-UgOicf7DSijWSNo7cnd1-XwfqZeh5Rr41lBQQ__',
+        'https://s3-alpha-sig.figma.com/img/ad75/f68e/ff3565aace5b28a31b97af500299868a?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CfyPbLBK-rTn5lBEKZ~pu9QZAPKVpqzHrVY5EMnRlScJrmaQuxZMBFXxjdZmCwKITXYILXgya4ElRYoSReidMzO9uod0bQKImIDiHLaaG6LtLwDc2n~VxlKu9RYAwUPCLjxfkYG5NgqoDxyELXrxtT3ntq8v~GqmHW7idPiXFPFAbQegLt1UrL2FgSxVv3bIr8MADbrAuPkpBEj-Sd5wZyalCRfv1uPzv749AJuP~fXsoUSZW2-9OQpd7gsKUGsYrl0ejcFghhHHxaamADNlMhitearIU~iA~2YJrmao8s37vTTIx2zo3FtP8QPsoDA3khBdecExHIFny8Y2cmVajg__',
+        'https://s3-alpha-sig.figma.com/img/ad75/f68e/ff3565aace5b28a31b97af500299868a?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CfyPbLBK-rTn5lBEKZ~pu9QZAPKVpqzHrVY5EMnRlScJrmaQuxZMBFXxjdZmCwKITXYILXgya4ElRYoSReidMzO9uod0bQKImIDiHLaaG6LtLwDc2n~VxlKu9RYAwUPCLjxfkYG5NgqoDxyELXrxtT3ntq8v~GqmHW7idPiXFPFAbQegLt1UrL2FgSxVv3bIr8MADbrAuPkpBEj-Sd5wZyalCRfv1uPzv749AJuP~fXsoUSZW2-9OQpd7gsKUGsYrl0ejcFghhHHxaamADNlMhitearIU~iA~2YJrmao8s37vTTIx2zo3FtP8QPsoDA3khBdecExHIFny8Y2cmVajg__',
+        'https://s3-alpha-sig.figma.com/img/d750/e5db/bde00c6980a5053ff7b3ea31cbf35361?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=fGrzKE4uKf7mF37hbB57mJpenti3Xf~gKtsq2ip~Ebieeqmi~x~QtOU4TuCCZREkbPKeJH-BFlYkv8cBbU7jgKCgoMIvOF1fugbsN05NzBygEE1BFuT-7pwoeqBylb~1IKkf0wU1CEhtsnIzELSHeXNu6FcVKD0gpGkEsB00~cdJ0XSB6weV0ZaY6Qrcuyu9ACmNbaFWD0pGMTxx8fJ2GrrOdqiCLKFHLCuJytg22vW6rNtCIk2R4PP4bf-RnYThyxHrMa7Hpm4WlA5fTetOHsg0SCg1kYEzqI06SIacESEpTocLZ8LAdLYW1AZW13xw~Q7-o64vktxqswUZKEU65Q__',
+        'https://s3-alpha-sig.figma.com/img/71b7/26c9/bdb04893d9269540ca86da074296255e?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=W5sLhuSq3FkrVCBCRTh84mbppkR~-f0tNtkb8RWMWK15oz9Gcanz4YFoO6KHOA7MiGslU3jSzopCULGXcsvjkldwmO3qeNDgSBK6EFGI4QiNvNu2j~rBRqmCaak1gqKFZFrEtGDaDNS62sd0L6pZaAZTu0zJ6G07biTXYcFqHEk39dWFWQhWjPgFNHFTRgYQMC7JQczi2uWt5K3Xfm9EM0AALDD43ZtfoIvdZOTI7vFD1hR655fOHPD1FSr~V4LSTe5iER1uPNux6UmQLeUM41iuxucHdRgsJ24KgG0XbBQuoCcO-UgOicf7DSijWSNo7cnd1-XwfqZeh5Rr41lBQQ__',
+        'https://s3-alpha-sig.figma.com/img/ad75/f68e/ff3565aace5b28a31b97af500299868a?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CfyPbLBK-rTn5lBEKZ~pu9QZAPKVpqzHrVY5EMnRlScJrmaQuxZMBFXxjdZmCwKITXYILXgya4ElRYoSReidMzO9uod0bQKImIDiHLaaG6LtLwDc2n~VxlKu9RYAwUPCLjxfkYG5NgqoDxyELXrxtT3ntq8v~GqmHW7idPiXFPFAbQegLt1UrL2FgSxVv3bIr8MADbrAuPkpBEj-Sd5wZyalCRfv1uPzv749AJuP~fXsoUSZW2-9OQpd7gsKUGsYrl0ejcFghhHHxaamADNlMhitearIU~iA~2YJrmao8s37vTTIx2zo3FtP8QPsoDA3khBdecExHIFny8Y2cmVajg__',
+        'https://s3-alpha-sig.figma.com/img/ad75/f68e/ff3565aace5b28a31b97af500299868a?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CfyPbLBK-rTn5lBEKZ~pu9QZAPKVpqzHrVY5EMnRlScJrmaQuxZMBFXxjdZmCwKITXYILXgya4ElRYoSReidMzO9uod0bQKImIDiHLaaG6LtLwDc2n~VxlKu9RYAwUPCLjxfkYG5NgqoDxyELXrxtT3ntq8v~GqmHW7idPiXFPFAbQegLt1UrL2FgSxVv3bIr8MADbrAuPkpBEj-Sd5wZyalCRfv1uPzv749AJuP~fXsoUSZW2-9OQpd7gsKUGsYrl0ejcFghhHHxaamADNlMhitearIU~iA~2YJrmao8s37vTTIx2zo3FtP8QPsoDA3khBdecExHIFny8Y2cmVajg__',
+        'https://s3-alpha-sig.figma.com/img/d750/e5db/bde00c6980a5053ff7b3ea31cbf35361?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=fGrzKE4uKf7mF37hbB57mJpenti3Xf~gKtsq2ip~Ebieeqmi~x~QtOU4TuCCZREkbPKeJH-BFlYkv8cBbU7jgKCgoMIvOF1fugbsN05NzBygEE1BFuT-7pwoeqBylb~1IKkf0wU1CEhtsnIzELSHeXNu6FcVKD0gpGkEsB00~cdJ0XSB6weV0ZaY6Qrcuyu9ACmNbaFWD0pGMTxx8fJ2GrrOdqiCLKFHLCuJytg22vW6rNtCIk2R4PP4bf-RnYThyxHrMa7Hpm4WlA5fTetOHsg0SCg1kYEzqI06SIacESEpTocLZ8LAdLYW1AZW13xw~Q7-o64vktxqswUZKEU65Q__'
+        
+    ];
+  return (
+    <div className='grid-images'>
+  
+        <Grid images={images}/>
+    </div>
+  )
+}
+
+export default Card
