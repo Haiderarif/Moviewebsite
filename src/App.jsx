@@ -4,7 +4,10 @@ import Emptystate from './Emptystate'
 import Movielist from './Movielist'
 import Createnewmovie from './Createnewmovie'
 import Edit from './Edit'
+
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// import Imagebox from './Imagebox'
+// import LoginForm from './LoginForm'
 
 function App() {
   return (

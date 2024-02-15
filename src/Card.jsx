@@ -15,7 +15,6 @@ function Card() {
     ];
   return (
     <div className='grid-images'>
-  
         <Grid images={images}/>
     </div>
   )
