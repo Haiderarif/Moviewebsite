@@ -61,6 +61,7 @@ html, body {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  margin-top: 1rem;
 }
 .icon-style{
 background-color: #224A58;
@@ -347,6 +348,9 @@ button {
     width: 303px;
     /* border: 2px solid black; */
   }
+}
+.required{
+  color: white;
 }
 .logoutbtn{
   text-decoration: none;
