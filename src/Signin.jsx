@@ -23,7 +23,7 @@ const history = useHistory();
     setFormSubmitted(true);
 
     // Check if email and password are filled
-    if (email && password) {
+    if (email === 'haider.arif123@gmail.com' && password==='haider123') {
       // Perform form submission logic
       console.log('Form submitted:', { email, password });
       history.push('/movielist');
@@ -43,7 +43,10 @@ const history = useHistory();
             value={email}
             onChange={handleEmailChange}
             placeholder='Email' /><br /><br />
-       {formSubmitted && !email && <span className="required">Email is required</span>}
+       {formSubmitted && (!email || email !=='haider.arif123@gmail.com') && (
+       <span className="required"></span>
+       
+       )}
 
             <input className='pass input-main' 
             type="password" 
@@ -52,11 +55,14 @@ const history = useHistory();
             onChange={handlePasswordChange}
 
             placeholder='Password' /><br />
-         {formSubmitted && !password && <span className="required">Password is required</span>}
+        {formSubmitted && (!password || password !== 'haider123') && (
+            <span className="required"> {formSubmitted && (!password || password !== 'haider123') && (
+              <span className="required">Please enter a valid email or password</span>
+            )}</span>
+          )}
 
             <div className='icon'>
-              <div className='icon-style'>
-              </div>
+              <div className='icon-style'></div>
             <p className='line'>Remember me</p>
             </div>
          <Link to ='/emptystate'>
